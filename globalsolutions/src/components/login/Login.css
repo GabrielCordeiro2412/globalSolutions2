@@ -1,0 +1,41 @@
+form{
+    display: flex;
+    flex-direction: column
+}
+
+section{
+    margin: 5% auto;
+    max-width: 1400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    margin: 15px auto;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #000;
+    width: 300px;
+    font-size: 15px;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px white inset;
+}
+
+button{
+    height: 50px;
+    background-color: #FF8870;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    margin: 20px auto;
+}
+
+a{
+    color: #000;
+}
