@@ -16,7 +16,7 @@ export default function CadastroONG(){
                 <input type="password" placeholder="Senha"/>
                 <button type="submit">Cadastrar ONG</button>
             </form>
-            <img src={ongIMG} alt="Mercado IMG"/>
+            <img src={ongIMG} alt="ONG IMG"/>
         </ContentSignup>
         </section>
     )

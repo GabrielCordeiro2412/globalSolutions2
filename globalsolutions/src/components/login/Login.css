@@ -36,6 +36,15 @@ button{
     margin: 20px auto;
 }
 
+button:hover{
+    background-color: #FF6D50;
+    cursor: pointer;
+}
+
 a{
     color: #000;
+}
+
+img{
+    margin-bottom: 20px;
 }

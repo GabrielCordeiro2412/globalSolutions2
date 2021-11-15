@@ -6,8 +6,16 @@ function LocalProvider({children}, props){
 
     const [ userLogin, setUserLogin ] = useState(null)
 
+    function login(){
+        setUserLogin("text")
+    }
+
+    function sair(){
+        setUserLogin()
+    }
+
     return(
-        <LocalContext.Provider value={{signed: !!userLogin, userLogin}}>
+        <LocalContext.Provider value={{signed: !!userLogin, userLogin, login, sair}}>
             {children}
         </LocalContext.Provider>
     )

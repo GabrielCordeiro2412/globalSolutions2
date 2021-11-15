@@ -55,3 +55,30 @@ export const BackContent = styled.div`
     display: flex;
     border: 1px solid #000;
 `
+
+export const MenuBar = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+
+    .buttons{
+        width: 18%;
+        display: flex;
+        flex-direction: row;
+    }
+    
+    button{
+        margin: 5px;
+        width: 200px;
+
+    }
+    button:hover{
+        background-color: #FF6D50;
+        cursor: pointer;
+    }
+
+    img{
+        width: 200px;
+    }
+`
