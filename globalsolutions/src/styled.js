@@ -15,6 +15,7 @@ export const EscolhaBotoes = styled.div`
 
     button:hover {
         background-color: #FF6D50;
+        cursor: pointer;
     }
 
     
@@ -23,4 +24,34 @@ export const EscolhaBotoes = styled.div`
 export const Questions = styled.img`
     width: 600px;
     margin-top: 20px;
+`
+
+export const ContentSignup = styled.div`
+    display: flex;
+    flex-direction: row;
+
+    form{
+        margin-right: 60px;
+    }
+    
+    img{
+        width: 450px;
+    }
+
+    input {
+        width: 450px
+    }
+
+    h1{
+        font-size:36px;
+    }
+
+    button:hover {
+        background-color: #FF6D50;
+        cursor: pointer;
+    }
+`
+export const BackContent = styled.div`
+    display: flex;
+    border: 1px solid #000;
 `

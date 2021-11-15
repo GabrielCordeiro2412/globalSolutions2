@@ -7,8 +7,8 @@ export default function Escolha(){
         <>
             <h1>Você é um:</h1>
             <EscolhaBotoes>
-                <Link to="/signup"><button>ONG</button></Link>
-                <Link to="/signup"><button>Mercado</button></Link>
+                <Link to="/cadastroONG"><button>ONG</button></Link>
+                <Link to="/cadastroMercado"><button>Mercado</button></Link>
             </EscolhaBotoes>
             <Questions src={Question} alt="Question"/>
         </>
