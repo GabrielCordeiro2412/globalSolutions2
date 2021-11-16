@@ -1,9 +1,9 @@
 import mercadoIMG from '../../img/mercadoIMG.svg'
-import {ContentSignup} from '../../styled'
+import {ContentSignup, SectionLogin} from '../../styled'
 
 export default function CadastroMercado(){
     return(
-        <section>
+        <SectionLogin>
         <ContentSignup>
             <form>
                 <h1>Cadastrar Mercado</h1>
@@ -17,6 +17,6 @@ export default function CadastroMercado(){
             </form>
             <img src={mercadoIMG} alt="Mercado IMG"/>
         </ContentSignup>
-        </section>
+        </SectionLogin>
     )
 }

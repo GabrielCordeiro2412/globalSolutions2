@@ -9,13 +9,27 @@ export const EscolhaBotoes = styled.div`
         height: 70px;
         font-size: 20px;
         font-weight: 500;
-        margin: 20px;
+        margin: 30px;
         cursor: pointer;
+        background-color: #FF8870;
+        border: none;
+        outline: none;
+        border-radius: 5px;
+
     }
 
     button:hover {
         background-color: #FF6D50;
         cursor: pointer;
+    }
+
+    @media (max-width: 412px) {
+        flex-direction: column;
+
+        button{
+            margin: 15px;   
+            width: 250px;
+        }
     }
 
     
@@ -29,28 +43,57 @@ export const Questions = styled.img`
 export const ContentSignup = styled.div`
     display: flex;
     flex-direction: row;
-
     form{
-        margin-right: 60px;
+        margin-right: 200px;
     }
     
     img{
-        width: 450px;
+        width: 500px;
     }
 
-    input {
-        width: 450px
+    input{
+        margin: 15px auto;
+        outline: none;
+        border: none;
+        border-bottom: 2px solid #000;
+        width: 450px;
+        font-size: 15px;
     }
 
     h1{
         font-size:36px;
     }
 
+    button{
+        height: 50px;
+        background-color: #FF8870;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin: 20px auto;
+        width: 450px;
+    }
+
     button:hover {
         background-color: #FF6D50;
         cursor: pointer;
     }
+
+
+    @media (max-width: 412px) {
+        flex-direction: column;
+
+        img{
+            width: 300px;
+            margin-top: 20px;
+        }
+
+        form{
+        margin-right: 0px;
+    }
+    }
 `
+
 export const BackContent = styled.div`
     display: flex;
     border: 1px solid #000;
@@ -63,7 +106,7 @@ export const MenuBar = styled.div`
     padding: 20px;
 
     .buttons{
-        width: 18%;
+        width: 20%;
         display: flex;
         flex-direction: row;
     }
@@ -74,7 +117,7 @@ export const MenuBar = styled.div`
         border-radius: 5px;
         outline: none;
         border: none;
-        width: 100%;
+        width: 250px;
         margin: 5px;
     }
 
@@ -148,6 +191,26 @@ export const ContainerHome = styled.section`
     margin: 5% auto;
 `
 
+export const Section = styled.section`
+    margin: 5% auto;
+    max-width: 1400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h1{
+        font-size: 35px;
+    }
+
+    @media (max-width: 412px) {
+        img{
+            width: 350px;
+        }   
+    }
+`
+
 export const SectionLogin = styled.section`
     margin: 5% auto;
     max-width: 1400px;
@@ -176,18 +239,21 @@ export const SectionLogin = styled.section`
     }
 
     button{
-        height: 50px;
         background-color: #FF8870;
         border-radius: 5px;
         outline: none;
         border: none;
+        height: 50px;
         width: 100%;
-        margin: 20px auto;
     }
 
     button:hover{
         background-color: #FF6D50;
         cursor: pointer;
+    }
+
+    p{
+        margin-top: 20px;
     }
 
     a{
@@ -217,6 +283,7 @@ export const CardProduto = styled.div`
     padding: 15px;
     border-radius: 5px;
     margin-top: 20px;
+    box-sizing: border-box;
 
     h1{
         font-size: 25px;
@@ -224,11 +291,32 @@ export const CardProduto = styled.div`
 
     h2{
         font-size: 18px;
-        font-weight: 600
+        font-weight: 500
     }
 
     p{
         font-size: 15px;
+    }
+
+    .btnSelect{
+        background-color: #FF8870;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        width: 100%;
+        height: 50px;
+        margin-top: 15px;
+        font-size: 17px;
+    }
+
+    .btnSelect:hover{
+        background-color: #FF6D50;
+        cursor: pointer;
+    }
+
+    h3{
+        font-weight: 500;
+        font-size: 18px;
     }
 
    

@@ -1,9 +1,9 @@
 import ongIMG from '../../img/ongIMG.svg'
-import {ContentSignup} from '../../styled'
+import {ContentSignup, SectionLogin} from '../../styled'
 
 export default function CadastroONG(){
     return(
-        <section>
+        <SectionLogin>
         <ContentSignup>
             <form>
                 <h1>Cadastrar ONG</h1>
@@ -18,6 +18,6 @@ export default function CadastroONG(){
             </form>
             <img src={ongIMG} alt="ONG IMG"/>
         </ContentSignup>
-        </section>
+        </SectionLogin>
     )
 }
