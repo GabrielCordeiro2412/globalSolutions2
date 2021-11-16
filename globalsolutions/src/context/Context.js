@@ -12,6 +12,7 @@ function LocalProvider({children}, props){
 
     function sair(){
         setUserLogin()
+        window.location = "/login"
     }
 
     return(
