@@ -134,6 +134,20 @@ export const MenuBar = styled.div`
     img{
         width: 200px;
     }
+
+    @media (max-width: 412px){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .buttons{
+            width: 100%;
+        }
+
+        button{
+            width: 300px;
+        }   
+    }
 `
 
 export const BarraBuscar = styled.div`
@@ -164,7 +178,7 @@ export const BarraBuscar = styled.div`
         border-radius: 5px;
         border: none;
         padding: 14px;
-        width: 400px;
+        width: 350px;
         outline: none;
     }
 
@@ -173,6 +187,12 @@ export const BarraBuscar = styled.div`
         cursor: pointer;
     }
 
+    @media (max-width: 412px){
+        justify-content: center;
+        input{
+            width: 230px;
+        }
+    }
 
 `
 
@@ -180,9 +200,15 @@ export const Alinhamento = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin: 5% auto;
+    max-width: 1400px;
 
     h1{
         font-size: 36px
+    }
+
+    @media (max-width: 412px){
+        align-items: center;
     }
 `
 
@@ -270,11 +296,18 @@ export const SectionHome = styled.section`
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin: auto;
+    max-width: 1400px;
+
+    @media (max-width: 412px) {
+        h1{
+            margin: auto;
+        }
+    }
 `
 
 export const TitleMeusProd = styled.h1`
     font-size: 30px;
-    margin-top: 40px;
 `
 
 export const CardProduto = styled.div`

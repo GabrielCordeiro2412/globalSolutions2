@@ -9,9 +9,9 @@ import {Link} from 'react-router-dom'
 
 
 export default function AppRoutes(){
-    const {sair} = useContext(LocalContext)
+    const {sair, userLogin} = useContext(LocalContext)
 
-    const [mercado, setMercado] = useState("sim")
+    const [mercado, setMercado] = useState(userLogin.mercado)
 
     function handleSair(){
         sair();
@@ -19,11 +19,10 @@ export default function AppRoutes(){
 
     return(
         <>
-
             <MenuBar>
                 <img src={Logo} alt="Logo"/>
                 <div className="buttons">
-                    { mercado ? <button><Link to="/cadastrarProd">Cadastrar Produto</Link></button> : <></>}
+                     {mercado && <button><Link to="/cadastrarProd">Cadastrar Produto</Link></button>}
                     <button onClick={handleSair}>Sair</button>
                 </div>
             </MenuBar>

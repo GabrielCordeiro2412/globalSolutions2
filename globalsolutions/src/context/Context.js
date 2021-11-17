@@ -7,7 +7,10 @@ function LocalProvider({children}, props){
     const [ userLogin, setUserLogin ] = useState(null)
 
     function login(){
-        setUserLogin("text")
+        let datauser = {
+            mercado: false
+        }
+        setUserLogin(datauser)
     }
 
     function sair(){

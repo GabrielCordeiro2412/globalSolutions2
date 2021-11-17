@@ -1,13 +1,16 @@
-import React, {useState} from 'react'
-
+import React, {useState, useContext} from 'react'
 import Lupa from '../../img/lupa.svg'
 import {BarraBuscar, Alinhamento, CardProduto, BottomCard, Buttons, SectionHome, TitleMeusProd } from '../../styled'
 import Delete from '../../img/delete.svg'
 import Edit from '../../img/edit.svg'
+import {LocalContext} from '../../context/Context'
 
 export default function Home(){
 
-    const [mercado, setMercado] = useState();
+    const {sair, userLogin} = useContext(LocalContext)
+
+    const [mercado, setMercado] = useState(userLogin.mercado)
+
 
     return(
         <>
