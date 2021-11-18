@@ -410,3 +410,21 @@ export const Buttons = styled.div`
         background-color: #43D001;
     }
 `
+export const BtnFinalizar = styled.button`
+        background-color: #61AB43;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+        margin: auto;
+        height: 100px;
+        width: 350px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size:25px;
+
+        :hover{
+            background-color: #529338;
+            cursor: pointer;
+        }
+`

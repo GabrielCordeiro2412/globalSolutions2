@@ -2,6 +2,7 @@ import React, {useState, useContext} from 'react'
 import Home from '../components/home/Home'
 import CadProd from '../components/cadastrarProd/CadastroProduto'
 import ProdutoMercado from '../components/mercado-prod/ProdutosMercado'
+import ListaProd from '../components/lista-prod/ListaProd'
 import {Route, Switch} from 'react-router-dom'
 import Logo from '../img/LOGO.svg'
 import {MenuBar, ContainerHome} from '../styled'
@@ -23,7 +24,7 @@ export default function AppRoutes(){
             <MenuBar>
                 <img src={Logo} alt="Logo"/>
                 <div className="buttons">
-                     {mercado ? <button><Link to="/cadastrarProd">Cadastrar Produto</Link></button> : <a href="#">Minha Lista</a>}
+                     {mercado ? <button><Link to="/cadastrarProd">Cadastrar Produto</Link></button> : <Link to="/listaProd">Minha Lista</Link>}
                     <button onClick={handleSair}>Sair</button>
                 </div>
             </MenuBar>
@@ -33,6 +34,7 @@ export default function AppRoutes(){
                 <Route path="/home" component={Home}/>
                 <Route path="/cadastrarProd" component={CadProd}/>
                 <Route path="/prodMercado" component={ProdutoMercado}/>
+                <Route path="/listaProd" component={ListaProd}/>
             </Switch>
         </ContainerHome>
         </>
