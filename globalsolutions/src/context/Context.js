@@ -18,8 +18,20 @@ function LocalProvider({children}, props){
         window.location = "/login"
     }
 
+    function cadastroONG(){
+        console.log("iha")
+    }
+
+    function cadastroMercado(){
+        console.log("iha")
+    }
+
+    function cadastroProduto(){
+        console.log("iha")
+    }
+
     return(
-        <LocalContext.Provider value={{signed: !!userLogin, userLogin, login, sair}}>
+        <LocalContext.Provider value={{signed: !!userLogin, userLogin, login, sair, cadastroONG, cadastroMercado, cadastroProduto}}>
             {children}
         </LocalContext.Provider>
     )

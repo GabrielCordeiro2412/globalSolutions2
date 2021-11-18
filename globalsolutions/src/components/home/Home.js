@@ -4,10 +4,11 @@ import {BarraBuscar, Alinhamento, CardProduto, BottomCard, Buttons, SectionHome,
 import Delete from '../../img/delete.svg'
 import Edit from '../../img/edit.svg'
 import {LocalContext} from '../../context/Context'
+import {Link} from 'react-router-dom'
 
 export default function Home(){
 
-    const {sair, userLogin} = useContext(LocalContext)
+    const {userLogin} = useContext(LocalContext)
 
     const [mercado, setMercado] = useState(userLogin.mercado)
 
@@ -22,7 +23,8 @@ export default function Home(){
             </BarraBuscar>
         </Alinhamento>
 
-        <TitleMeusProd>Meus Produtos</TitleMeusProd>
+        { mercado ? (<TitleMeusProd>Meus Produtos</TitleMeusProd>) : (<TitleMeusProd>Mercados perto de mim</TitleMeusProd>)}
+        
         <SectionHome>
             { mercado ? <>
                 <CardProduto>
@@ -66,12 +68,22 @@ export default function Home(){
 
             </> : <>
             <CardProduto>
-                <h1>Caixa de Leite</h1>
-                <h2>15 unidades</h2>
-                <h3>Validade: 10/11/2020</h3>
-                <h3>Provedor: Super Mercado Arroz</h3>
-                <p>aqui ficará a descrição do produto aqui ficará a descrição do produto</p>
-                <button className="btnSelect">Selecionar Produto</button>
+                <h1>Mercado do Tiozinho</h1>
+                <h2>15 produtos disponíveis</h2>
+                <h3>Endereço: Rua do Charme, 456</h3>
+                <Link to="/prodMercado"><button className="btnSelect">Vizualizar Produtos</button></Link>
+            </CardProduto>
+            <CardProduto>
+                <h1>Mercado do Tiozinho</h1>
+                <h2>15 produtos disponíveis</h2>
+                <h3>Endereço: Rua do Charme, 456</h3>
+                <button className="btnSelect">Vizualizar Produtos</button>
+            </CardProduto>
+            <CardProduto>
+                <h1>Mercado do Tiozinho</h1>
+                <h2>15 produtos disponíveis</h2>
+                <h3>Endereço: Rua do Charme, 456</h3>
+                <button className="btnSelect">Vizualizar Produtos</button>
             </CardProduto>
             </>}
         </SectionHome>

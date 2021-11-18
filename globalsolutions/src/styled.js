@@ -109,6 +109,7 @@ export const MenuBar = styled.div`
         width: 20%;
         display: flex;
         flex-direction: row;
+        align-items: center;
     }
 
     button{
@@ -119,6 +120,7 @@ export const MenuBar = styled.div`
         border: none;
         width: 250px;
         margin: 5px;
+        font-size: 20px;
     }
 
     button a{
@@ -133,6 +135,12 @@ export const MenuBar = styled.div`
 
     img{
         width: 200px;
+    }
+
+    a{
+        text-decoration: none;
+        color: #000;
+        margin-right: 20px;
     }
 
     @media (max-width: 412px){
@@ -200,7 +208,7 @@ export const Alinhamento = styled.div`
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 5% auto;
+    margin: 0% auto 3% auto;
     max-width: 1400px;
 
     h1{
@@ -214,7 +222,7 @@ export const Alinhamento = styled.div`
 
 export const ContainerHome = styled.section`
     max-width: 1400px;
-    margin: 5% auto;
+    margin: 3% auto;
 `
 
 export const Section = styled.section`
@@ -294,7 +302,6 @@ export const SectionLogin = styled.section`
 export const SectionHome = styled.section`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     flex-wrap: wrap;
     margin: auto;
     max-width: 1400px;
@@ -317,6 +324,7 @@ export const CardProduto = styled.div`
     border-radius: 5px;
     margin-top: 20px;
     box-sizing: border-box;
+    margin-right: 30px;
 
     h1{
         font-size: 25px;
