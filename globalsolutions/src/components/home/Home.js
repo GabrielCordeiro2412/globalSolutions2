@@ -4,13 +4,55 @@ import {BarraBuscar, Alinhamento, CardProduto, BottomCard, Buttons, SectionHome,
 import Delete from '../../img/delete.svg'
 import Edit from '../../img/edit.svg'
 import {LocalContext} from '../../context/Context'
+import ProdMercado from '../mercado-prod/ProdutosMercado'
 import {Link} from 'react-router-dom'
+
 
 export default function Home(){
 
     const {userLogin} = useContext(LocalContext)
 
     const [mercado, setMercado] = useState(userLogin.mercado)
+
+    const cards = [
+        {titulo: "Mercado do tio", qtdProd: "15", endereco: "Rua do Charles, 123", id: 2313131},
+        {titulo: "Quitandinha Esquina", qtdProd: "8", endereco: "Rua das Flores, 143", id: 2313131},
+        {titulo: "Julia Frigo", qtdProd: "25", endereco: "Rua do Sangue Bom, 321", id: 2313131},
+    ]
+
+    const cardsMercado = [
+        {titulo: "Caixa de Leite", qtdProd: "6", descricao: "aqui ficará a descrição do produto aqui ficará a descrição do produto", validade: "11/12/2021"},
+        {titulo: "Caixa de Leite", qtdProd: "6", descricao: "aqui ficará a descrição do produto aqui ficará a descrição do produto", validade: "11/12/2021"},
+        {titulo: "Caixa de Leite", qtdProd: "6", descricao: "aqui ficará a descrição do produto aqui ficará a descrição do produto", validade: "11/12/2021"}
+    ]
+
+    const cardBox = cards.map((c, i) => 
+        <CardProduto key={i}>
+                <h1>{c.titulo}</h1>
+                <h2>{c.qtdProd} produtos disponíveis</h2>
+                <h3>Endereço: {c.endereco}</h3>
+                <Link to={`/prodMercado/${c.id}`}><button className="btnSelect" >Ver Produtos</button></Link>
+        </CardProduto>
+    )
+
+    function teste(){
+        <ProdMercado titulo="pinto"/>
+    }
+
+    const cardBox2 = cardsMercado.map((c, i) => 
+        <CardProduto>
+                <h1>{c.titulo}</h1>
+                <h2>{c.qtdProd} unidades</h2>
+                <p>{c.descricao}</p>
+                <BottomCard>
+                    <Buttons>
+                        <Link><button><img src={Delete} alt="Delete"/></button></Link>
+                        <Link><button className="btn2" onClick={teste}><img src={Edit} alt="Edit"/></button></Link>
+                    </Buttons>
+                    <h3>Validade: {c.validade}</h3>
+                </BottomCard>
+        </CardProduto>
+    )
 
 
     return(
@@ -27,64 +69,9 @@ export default function Home(){
         
         <SectionHome>
             { mercado ? <>
-                <CardProduto>
-                <h1>Caixa de Leite</h1>
-                <h2>15 unidades</h2>
-                <p>aqui ficará a descrição do produto aqui ficará a descrição do produto</p>
-                <BottomCard>
-                    <Buttons>
-                        <button><img src={Delete} alt="Delete"/></button>
-                        <button className="btn2"><img src={Edit} alt="Edit"/></button>
-                    </Buttons>
-                    <h3>Validade: 10/11/2020</h3>
-                </BottomCard>
-            </CardProduto>
-
-            <CardProduto>
-                <h1>Caixa de Leite</h1>
-                <h2>15 unidades</h2>
-                <p>aqui ficará a descrição do produto aqui ficará a descrição do produto</p>
-                <BottomCard>
-                    <Buttons>
-                        <button><img src={Delete} alt="Delete"/></button>
-                        <button className="btn2"><img src={Edit} alt="Edit"/></button>
-                    </Buttons>
-                    <h3>Validade: 10/11/2020</h3>
-                </BottomCard>
-            </CardProduto>
-
-            <CardProduto>
-                <h1>Caixa de Leite</h1>
-                <h2>15 unidades</h2>
-                <p>aqui ficará a descrição do produto aqui ficará a descrição do produto</p>
-                <BottomCard>
-                    <Buttons>
-                        <button><img src={Delete} alt="Delete"/></button>
-                        <button className="btn2"><img src={Edit} alt="Edit"/></button>
-                    </Buttons>
-                    <h3>Validade: 10/11/2020</h3>
-                </BottomCard>
-            </CardProduto>
-
+                {cardBox2}
             </> : <>
-            <CardProduto>
-                <h1>Mercado do Tiozinho</h1>
-                <h2>15 produtos disponíveis</h2>
-                <h3>Endereço: Rua do Charme, 456</h3>
-                <Link to="/prodMercado"><button className="btnSelect">Vizualizar Produtos</button></Link>
-            </CardProduto>
-            <CardProduto>
-                <h1>Mercado do Tiozinho</h1>
-                <h2>15 produtos disponíveis</h2>
-                <h3>Endereço: Rua do Charme, 456</h3>
-                <button className="btnSelect">Vizualizar Produtos</button>
-            </CardProduto>
-            <CardProduto>
-                <h1>Mercado do Tiozinho</h1>
-                <h2>15 produtos disponíveis</h2>
-                <h3>Endereço: Rua do Charme, 456</h3>
-                <button className="btnSelect">Vizualizar Produtos</button>
-            </CardProduto>
+            {cardBox}
             </>}
         </SectionHome>
 

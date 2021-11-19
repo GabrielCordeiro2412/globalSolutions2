@@ -22,7 +22,7 @@ export default function AppRoutes(){
     return(
         <>
             <MenuBar>
-                <img src={Logo} alt="Logo"/>
+                <Link to="/home"><img src={Logo} alt="Logo"/></Link>
                 <div className="buttons">
                      {mercado ? <button><Link to="/cadastrarProd">Cadastrar Produto</Link></button> : <Link to="/listaProd">Minha Lista</Link>}
                     <button onClick={handleSair}>Sair</button>
@@ -33,7 +33,7 @@ export default function AppRoutes(){
                 <Route path="/" exact component={Home}/>
                 <Route path="/home" component={Home}/>
                 <Route path="/cadastrarProd" component={CadProd}/>
-                <Route path="/prodMercado" component={ProdutoMercado}/>
+                <Route path="/prodMercado/:id" component={ProdutoMercado}/>
                 <Route path="/listaProd" component={ListaProd}/>
             </Switch>
         </ContainerHome>
