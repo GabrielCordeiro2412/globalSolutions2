@@ -10,16 +10,19 @@ import {Link} from 'react-router-dom'
 
 export default function Home(){
 
-    const {userLogin} = useContext(LocalContext)
+    const {userLogin, buscaProduto} = useContext(LocalContext)
 
     const [mercado, setMercado] = useState(userLogin.mercado)
+    const [busca, setBusca] = useState();
 
+    //Cards se o usuário estiver logado como "ONH", onde ele irá poder vizualizar os supermercados mais proximos dele
     const cards = [
         {titulo: "Mercado do tio", qtdProd: "15", endereco: "Rua do Charles, 123", id: 2313131},
         {titulo: "Quitandinha Esquina", qtdProd: "8", endereco: "Rua das Flores, 143", id: 2313131},
         {titulo: "Julia Frigo", qtdProd: "25", endereco: "Rua do Sangue Bom, 321", id: 2313131},
     ]
 
+    //Cards se o usuário estiver logado como "MERCADO", onde ele irá poder vizualizar os produtos
     const cardsMercado = [
         {titulo: "Caixa de Leite", qtdProd: "6", descricao: "aqui ficará a descrição do produto aqui ficará a descrição do produto", validade: "11/12/2021"},
         {titulo: "Caixa de Leite", qtdProd: "6", descricao: "aqui ficará a descrição do produto aqui ficará a descrição do produto", validade: "11/12/2021"},
@@ -35,8 +38,9 @@ export default function Home(){
         </CardProduto>
     )
 
-    function teste(){
-        <ProdMercado titulo="pinto"/>
+
+    function handleBusca(){
+        buscaProduto(busca)
     }
 
     const cardBox2 = cardsMercado.map((c, i) => 
@@ -47,7 +51,7 @@ export default function Home(){
                 <BottomCard>
                     <Buttons>
                         <Link><button><img src={Delete} alt="Delete"/></button></Link>
-                        <Link><button className="btn2" onClick={teste}><img src={Edit} alt="Edit"/></button></Link>
+                        <Link><button className="btn2"><img src={Edit} alt="Edit"/></button></Link>
                     </Buttons>
                     <h3>Validade: {c.validade}</h3>
                 </BottomCard>
@@ -60,8 +64,8 @@ export default function Home(){
         <Alinhamento>
             <h1>Buscar</h1>
             <BarraBuscar>
-                <input type="text" placeholder="Buscar produtos" />
-                <button><img src={Lupa} alt="Lupa"/></button>
+                <input type="text" placeholder="Buscar produtos" value={busca} onChange={(texto) => setBusca(texto)} />
+                <button onClick={handleBusca}><img src={Lupa} alt="Lupa"/></button>
             </BarraBuscar>
         </Alinhamento>
 

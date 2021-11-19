@@ -120,7 +120,9 @@ export const MenuBar = styled.div`
         border: none;
         width: 250px;
         margin: 5px;
-        font-size: 20px;
+        font-size: 16px;
+        justify-content:center;
+        align-items: center;
     }
 
     button a{

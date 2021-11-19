@@ -9,7 +9,7 @@ export default function CadastroMercado(){
 
     const [dados, setDados] = useState({
         "nome": "",
-        "cnpj": 0,
+        "cnpj": "",
         "telefone": "",
         "endereco": "",
         "email": "",

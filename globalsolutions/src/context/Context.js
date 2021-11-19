@@ -8,7 +8,7 @@ function LocalProvider({children}, props){
 
     function login(){
         let datauser = {
-            mercado: false
+            mercado: true
         }
         setUserLogin(datauser)
     }
@@ -18,20 +18,24 @@ function LocalProvider({children}, props){
         window.location = "/login"
     }
 
-    function cadastroONG(){
+    function cadastroONG(dados){
         console.log("iha")
     }
 
-    function cadastroMercado(){
+    function cadastroMercado(dados){
         console.log("iha")
     }
 
-    function cadastroProduto(){
+    function cadastroProduto(dados){
+        console.log("iha")
+    }
+
+    function buscaProduto(busca){
         console.log("iha")
     }
 
     return(
-        <LocalContext.Provider value={{signed: !!userLogin, userLogin, login, sair, cadastroONG, cadastroMercado, cadastroProduto}}>
+        <LocalContext.Provider value={{signed: !!userLogin, userLogin, login, sair, cadastroONG, cadastroMercado, cadastroProduto, buscaProduto}}>
             {children}
         </LocalContext.Provider>
     )

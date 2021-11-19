@@ -10,7 +10,7 @@ export default function CadastroONG(){
     const [dados, setDados] = useState({
         "nome": "",
         "nomeResponsavel": "",
-        "cnpj": 0,
+        "cnpj": "",
         "telefone": "",
         "endereco": "",
         "email": "",
